@@ -20,5 +20,22 @@
     <script type="text/javascript" src="./script.js"></script>
     <script type="text/javascript" src="./script2.js"></script>
     <script type="text/javascript" src="./script3.js"></script>
+    <script type="text/javascript">
+      const loadStyleSheet = (src) => {
+        if (document.createStyleSheet) {
+          document.createStyleSheet(src);
+        } else {
+          const stylesheet = document.createElement("link");
+          stylesheet.href = src;
+          stylesheet.type = "text/css";
+          stylesheet.rel = "stylesheet";
+          document.getElementsByTagName("head")[0].appendChild(stylesheet);
+        }
+      };
+
+      window.onload = function () {
+        loadStyleSheet("./style3.css");
+      };
+    </script>
   </body>
 </html>
